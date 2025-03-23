@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.grupo8.bff.config.FeignBasicAuthConfig;
 import com.grupo8.bff.models.CreatePayment;
 
-@FeignClient(name = "patient-service", url = "http://localhost:7071/api", configuration = FeignBasicAuthConfig.class)
+@FeignClient(name = "patient-service", url = "https://grupo8payment.azurewebsites.net/api", configuration = FeignBasicAuthConfig.class)
 public interface PaymentClient {
 
-    @PostMapping(value = "/createpayment", consumes = "application/json")
+    @PostMapping(value = "/createpayment?code=IQ5Ej_qxx_h97TTlpdy2GIthvNfQBjoDcBAgFAqV641XAzFuadQgAg==", consumes = "application/json")
     String createpayment(@RequestBody CreatePayment body);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/checkPayment/{token}")
+    @RequestMapping(method = RequestMethod.GET, value = "/checkPayment/{token}?code=IQ5Ej_qxx_h97TTlpdy2GIthvNfQBjoDcBAgFAqV641XAzFuadQgAg==")
     String checkPayment(@PathVariable("token") String token);
 
 }
