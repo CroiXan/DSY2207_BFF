@@ -12,7 +12,7 @@ import com.grupo8.bff.config.FeignJwtAuthConfig;
 import com.grupo8.bff.models.Roles;
 import com.grupo8.bff.models.UserRoles;
 
-@FeignClient(name = "role-service", url = "http://localhost:8080/api/grupo8/role", configuration = FeignJwtAuthConfig.class)
+@FeignClient(name = "role-service", url = "http://grupo8jwt.ddns.net:8080/api/grupo8/role", configuration = FeignJwtAuthConfig.class)
 public interface RoleApiClient {
 
     @PostMapping("/createRole")

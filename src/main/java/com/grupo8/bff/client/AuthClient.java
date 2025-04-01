@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.grupo8.bff.config.FeignAuthlessConfig;
 import com.grupo8.bff.models.LoginRequest;
 
-@FeignClient(name = "auth-service", url = "http://localhost:8080/api/grupo8/auth", configuration = FeignAuthlessConfig.class)
+@FeignClient(name = "auth-service", url = "http://grupo8jwt.ddns.net:8080/api/grupo8/auth")
 public interface AuthClient {
 
     @PostMapping("/login")
