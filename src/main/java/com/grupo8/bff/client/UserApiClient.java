@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import com.grupo8.bff.config.FeignJwtAuthConfig;
 import com.grupo8.bff.models.Usuario;
 
-@FeignClient(name = "user-service", url = "http://grupo8jwt.ddns.net:8080/api/grupo8/user", configuration = FeignJwtAuthConfig.class)
+@FeignClient(name = "user-service", url = "http://localhost:8080/api/grupo8/user", configuration = FeignJwtAuthConfig.class)
 public interface UserApiClient {
 
     @PostMapping("/insertUsuario")
