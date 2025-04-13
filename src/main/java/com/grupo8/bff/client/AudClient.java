@@ -8,10 +8,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.grupo8.bff.config.FeignJwtAuthConfig;
 import com.grupo8.bff.models.GraphQLRequest;
 
-@FeignClient(name = "aud-service", url = "http://localhost:8080/api/grupo8/auditoria", configuration = FeignJwtAuthConfig.class)
+@FeignClient(name = "aud-service", url = "http://grupo8jwt.ddns.net:8080/api/grupo8", configuration = FeignJwtAuthConfig.class)
 public interface AudClient {
 
-    @PostMapping
+    @PostMapping("/auditoria")
     public ResponseEntity<?> AudGraphQl(@RequestBody GraphQLRequest request);
+
+    @PostMapping("/auditsearch")
+    public ResponseEntity<?> SearchAuditFunction(@RequestBody GraphQLRequest request);
 
 }

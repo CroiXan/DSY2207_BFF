@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.grupo8.bff.config.FeignJwtAuthConfig;
 import com.grupo8.bff.models.GraphQLRequest;
 
-@FeignClient(name = "correo-service", url = "http://localhost:8080/api/grupo8/correo", configuration = FeignJwtAuthConfig.class)
+@FeignClient(name = "correo-service", url = "http://grupo8jwt.ddns.net:8080/api/grupo8/correo", configuration = FeignJwtAuthConfig.class)
 public interface CorreoClient {
 
     @PostMapping
