@@ -1,6 +1,5 @@
 package com.grupo8.bff.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -41,7 +40,7 @@ public class UserController {
     }
 
     @GetMapping("/obtenerUsuarios")
-    public List<Usuario> obtenerUsuarios() {
+    public String obtenerUsuarios() {
         return userApiClient.obtenerUsuarios();
     }
 

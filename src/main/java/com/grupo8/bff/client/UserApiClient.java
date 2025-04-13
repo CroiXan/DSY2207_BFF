@@ -1,6 +1,5 @@
 package com.grupo8.bff.client;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.cloud.openfeign.FeignClient;
@@ -27,7 +26,7 @@ public interface UserApiClient {
     public String eliminarUsuario(@RequestBody String id);
 
     @GetMapping("/obtenerUsuarios")
-    public List<Usuario> obtenerUsuarios();
+    public String obtenerUsuarios();
 
     @GetMapping("/buscarUsuarioPorRut")
     public Optional<Usuario> buscarUsuarioPorRut(@RequestHeader("rut") String rut);
