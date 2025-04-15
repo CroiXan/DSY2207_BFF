@@ -10,7 +10,7 @@ import com.grupo8.bff.client.AudClient;
 import com.grupo8.bff.models.GraphQLRequest;
 
 @RestController
-@RequestMapping("/api/grupo8/auditoria")
+@RequestMapping("/api/grupo8")
 public class AudController {
 
     private final AudClient audClient;
@@ -19,9 +19,14 @@ public class AudController {
         this.audClient = audClient;
     }
 
-    @PostMapping
+    @PostMapping("/auditoria")
     public ResponseEntity<?> AudGraphQl(@RequestBody GraphQLRequest request){
         return this.audClient.AudGraphQl(request);
+    } 
+
+    @PostMapping("/auditsearch")
+    public ResponseEntity<?> SearchAuditFunction(@RequestBody GraphQLRequest request){
+        return this.audClient.SearchAuditFunction(request);
     } 
 
 }
